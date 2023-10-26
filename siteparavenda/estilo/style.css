@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+/*FONTES*/
+@font-face {
+    font-family: 'docktrin';
+    src: url('../font/docktrin.ttf') format("truetype"),
+}
+
+@font-face {
+    font-family: 'vanilla';
+    src: url('../font/vanilla_whale.otf') format("opentype"),
+}
+
 
 /*BASE*/
 *{
@@ -22,6 +33,11 @@ body{
 
 /*Variaveis*/
 
+:root{
+    --font1: 'docktrin';
+    --font2: 'vanilla';
+}
+
 /*Cabecalho*/
 header{
     position: fixed;
@@ -36,11 +52,23 @@ header{
 
 
 div#title{
+    letter-spacing: 4px;
+    font: normal bold 1em var(--font1);
     display: flex;
-    align-items: center;
     color: white;
     padding: 20px;
+    
 
+}
+
+div#title h1{
+    padding: 10px;
+}
+
+div#title img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 header ul{
@@ -88,7 +116,8 @@ div#conteudo1{
 }
 
 div#conteudo1 h1{
-    font: normal bold 3em arial;
+    letter-spacing: 8px;
+    font: normal bold 4em var(--font2);
     color: rgb(255, 123, 0);
 }
 
@@ -114,8 +143,8 @@ div#conteudo1 a{
     color: rgb(19, 19, 19);
 }
 
-div#conteudo1 a:hover{
+div#conteudo1 li:hover{
 
-    transform: translate();
+    transform: translateY(-2px);
 }
 

@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('media.css');
+
 /*FONTES*/
 @font-face {
     font-family: 'docktrin';
@@ -92,6 +94,7 @@ header li:hover{
     transform: translate(-2px ,-2px);
     transition: transform 0.2s;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.781);
+    
 }
 
 /*Menu Redes Sociais*/
@@ -100,6 +103,12 @@ header ul#redes_sociais img{
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    opacity: 0.8;
+}
+
+header ul#redes_sociais img:hover{
+    opacity: 1;
+    
 }
 
 /*Fundo*/

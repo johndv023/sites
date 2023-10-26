@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import url(main.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #EDF1F7;
+  --red: #C51212;
+  --blue: #0041C2;
+  --green: #14B02D;
+  --yellow: #ffc12b;
+}
+
+
+/*Geral*/
+
+body, button, a {
+  color: var(--text);
+  font: 400 1rem "Mukta", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+/*cabecalho*/
+header{
+  display: flex;
+  align-items: center;
+  column-gap: 64px;
+  width: 100%;
+  max-width: 1120px;
+  padding-top: 40px;
+}
+
+header img{
+  width: 64px;
+  height: auto;
+}
+
+.navigation{
+  display: flex;
+  align-items: center;
+  column-gap: 48px;
+  list-style: none;
+  
+}
+
+.navigation_link{
+  list-style: none;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navigation_link:hover{
+  color: var(--red);
+}
+
+.navigation_link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60%;
+  height: 1px;
+  background-color: var(--red);
+  transform:scaleX(0);
+  transform-origin: right;
+  transition:transform 0.4s;
+}
+.navigation_link:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition:transform 0.4s;
+}
+
+.navigation_social{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.navigation_social svg{
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.navigation_social svg:hover{
+  opacity: 1;
+  transform: translateY(-5px);
+  transition: all 0.4s;
+  cursor: pointer; /*muda o tipo de cursos para uma mao*/ 
+}
+
+/*Corpo - Background*/
+
+#background{
+  position:fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+
+#background video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#background::before{
+  
+  content: ''; /*Cria um conteudo invisivel*/
+  width: inherit; /*Ocupa 100% da largura da tag pai*/
+  height: inherit;/*Ocupa 100% da altura da tag pai*/
+  position: fixed;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+  z-index:1;
+}
+
+/*Conteudo do site*/
+#app{
+  display: flex;
+  flex-direction: column;
+  align-items:center ;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
